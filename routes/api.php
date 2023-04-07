@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Define a post route for the order controller store action
-Route::post('orders', [IngredientController::class, 'store']);
+Route::post('orders', [OrderController::class, 'store']);

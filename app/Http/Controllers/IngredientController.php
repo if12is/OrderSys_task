@@ -11,60 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class IngredientController extends Controller
 {
-    // public function store(Request $request)
-    // {
-    //     // Validate the request payload
-    //     $validator = Validator::make($request->all(), [
-    //         'products' => 'required|array',
-    //         'products.*.product_id' => 'required|exists:products,id',
-    //         'products.*.quantity' => 'required|integer|min:1',
-    //         'customer_name' => 'required|string',
-    //         'customer_email' => 'required|email|string',
-    //     ]);
 
-    //     if ($validator->fails()) {
-    //         return response()->json(['errors' => $validator->errors()], 422);
-    //     }
-
-    //     // Create a new order
-    //     $order = Order::create($request->all());
-
-    //     // Loop through the products in the request
-    //     foreach ($request->products as $product) {
-    //         // Check that the product has a valid quantity value
-    //         if (!isset($product['quantity']) || $product['quantity'] < 1) {
-    //             continue; // Skip this product if it doesn't have a valid quantity
-    //         }
-    //         // Find the product by id
-    //         $foundProduct = Product::find($product['product_id']);
-
-    //         if (!$foundProduct) {
-    //             // Product not found, return error response
-    //             return response()->json(['error' => 'Product not found'], 404);
-    //         }
-
-    //         // Attach the product to the order with the quantity
-    //         $order->products()->attach($foundProduct->id, ['quantity' => $product['quantity']]);
-
-    //         // Loop through the ingredients of the product
-    //         foreach ($foundProduct->ingredients as $ingredient) {
-    //             // Calculate the amount of ingredient consumed by the product quantity
-    //             $amount = $ingredient->pivot->amount * $product['quantity'];
-
-    //             // Update the stock of the ingredient by subtracting the amount
-    //             $ingredient->update(['stock' => $ingredient->stock - $amount]);
-
-    //             // Check if the stock of the ingredient is below 50%
-    //             if ($ingredient->stock <= $ingredient->threshold) {
-    //                 // Send an email to alert the merchant
-    //                 Mail::to('merchant@example.com')->send(new IngredientAlert($ingredient));
-    //             }
-    //         }
-    //     }
-
-    //     // Return a success response with the order
-    //     return response()->json(['success' => true, 'order' => $order]);
-    // }
 
     public function store(Request $request)
     {
