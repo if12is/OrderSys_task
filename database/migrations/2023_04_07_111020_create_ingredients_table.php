@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('stock', 8, 2); // The stock of the ingredient in grams
+            $table->boolean('alert_sent')->default(false);
             $table->decimal('threshold', 8, 2); // The threshold of the ingredient in grams for sending an email alert
             $table->timestamps();
         });
